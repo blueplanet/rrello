@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+todo = List.create name: 'Todo'
+doing = List.create name: 'Doing'
+done = List.create name: 'Done'
+
+%w{ラーメン屋にいく もやしを食べる 注文する ラーメンを食べる 替え玉を食べる お会計を支払う}.each do |task|
+  Card.create(:list_id => todo.id, :content => task)
+end
