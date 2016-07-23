@@ -3,9 +3,8 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on 'ready page:load', ->
-  if $('#index')[0]
-    new Vue(
-      el: '#index'
-      data:
-        items: JSON.parse($('#index').attr('data-lists'))
-    )
+  new Vue(
+    el: '#board'
+    data:
+      lists: JSON.parse($('#board').attr('data-lists'))
+  )

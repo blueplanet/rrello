@@ -1,11 +1,10 @@
-%h1 All list
+%h1 Board
 
-#index{ 'data-lists' => @lists.to_json }
+#board{ 'data-lists' => @lists.to_json(include: 'cards') }
+  .list.panel.panel-default{ 'v-for' => 'list in lists' }
+    .panel-body
+      .list-name {{ list.name }}
+      .card{ 'v-for' => 'card in list.cards'}
+        {{ card.content }}
 
-  %table.table.table-striped
-    %thead
-      %th リスト名
-    %tbody
-      %tr{'v-for' => 'item in items' }
-        %td
-          {{item.name}}
+      %a.add-card カードを追加
