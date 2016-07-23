@@ -10,6 +10,6 @@ todo = List.create name: 'Todo'
 doing = List.create name: 'Doing'
 done = List.create name: 'Done'
 
-%w{ラーメン屋にいく もやしを食べる 注文する ラーメンを食べる 替え玉を食べる お会計を支払う}.each do |task|
-  Card.create(:list_id => todo.id, :content => task)
+%w{ラーメン屋にいく もやしを食べる 注文する ラーメンを食べる 替え玉を食べる お会計を支払う}.each_with_index do |task, index|
+  Card.create(list_id: todo.id, content: task, order_no: index + 1)
 end

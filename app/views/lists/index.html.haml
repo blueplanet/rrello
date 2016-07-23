@@ -4,7 +4,7 @@
   .list.panel.panel-default{ 'v-for' => 'list in lists' }
     .panel-body
       .list-name {{ list.name }}
-      .card{ 'v-for' => 'card in list.cards'}
+      .card{ 'v-for' => 'card in list.cards | orderBy "order_no"', 'draggable' => 'true', '@dragstart' => 'dragstart(card, $event)', '@dragend' => 'dragend', '@dragenter' => 'dragenter(card)' }
         {{ card.content }}
 
       %a.add-card カードを追加
