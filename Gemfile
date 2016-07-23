@@ -49,3 +49,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "less-rails"
 gem "therubyracer"
 gem 'twitter-bootstrap-rails'
+gem 'vuejs-rails'
+gem 'haml-rails'
+gem 'erb2haml', group: :development
