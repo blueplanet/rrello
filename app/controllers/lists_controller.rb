@@ -2,6 +2,7 @@ class ListsController < ApplicationController
   protect_from_forgery expect: [:update]
 
   def index
+    @lists = List.all
   end
 
   def lists
